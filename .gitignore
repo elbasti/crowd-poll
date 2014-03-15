@@ -1,4 +1,9 @@
+# Django ignores
+
 *.log
 *.pot
 *.pyc
 local_settings.py
+
+# vim ignores
+.sw[po]
