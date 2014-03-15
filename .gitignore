@@ -7,3 +7,9 @@ local_settings.py
 
 # vim ignores
 .sw[po]
+
+# emacs ignores
+*~
+
+# Walter's Notes
+Notes/
