@@ -1,0 +1,196 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+      <title>Starter Template for Bootstrap</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="{{STATIC_URL}}/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="{{STATIC_URL}}/css/carousel.css" rel="stylesheet">
+
+      {% endblock %}
+  </head>
+
+  <!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Wiki-Polls</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="mailto:general@wikipolls.com">Contact</a></li>
+              </ul>                   
+              <ul class="nav navbar-nav pull-right">
+                {% if user.is_authenticated %}
+                <li><a>Welcome {{user.username}}</a></li>
+                <li><a href="/logout/">Logout</a></li>
+                {% else %}
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/register/">Register</a></li>
+                {% endif %}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="{{STATIC_URL}}/img/poll.jpg" alt="">
+
+          <div class="container">
+            <div class="carousel-caption">              
+              <h1>Welcome to Wiki-Polls</h1>
+              <p>Wiki-polls is a open-source, open-analytics platform for crowdsourced polling data.  Our goal is to provide a tool for building centralized polling data that is open to the public, providing free statistical plug-ins with supporting materials.</p>
+              <p><a class="btn btn-lg btn-primary" href="#about" role="button">About Wiki-Polls</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{STATIC_URL}}/img/poll.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Crowdsourced Polling</h1>
+              <p>Typical poll aggregation is done by journalists and academics and stored in private databases.  Wiki-polls removes the veil that surrounds polling analytics by leveraging the power of an informed, engaged, online community.</p>
+              <p><a class="btn btn-lg btn-primary" href="#polling" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="{{STATIC_URL}}/img/poll.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Open-Source Analytics</h1>
+              <p>Using the crowdsourced polling database, wiki-polls constructs a set of useful analytics, digestible graphs, and easy to understand synthesis of the data for each poll.  Each piece is customizable, and open-source. </p>
+              <p><a class="btn btn-lg btn-primary" href="#analytics" role="button">Browse Open Analytics</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="team.html" class="btn btn-huge btn-block btn-embossed btn-danger"><h2>The Team</h2></a>
+          <p>Discover the individuals who brought wiki-polls into existence, and the other projects they're working on.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <a href="example.html" class="btn btn-huge btn-block btn-embossed btn-danger"><h2>Illustrative Example</h2></a>
+          <p>"Enough hype already, show us the damn thing!" You can find here a tutorial on how wiki-polls works using the 2012 Presidential Election.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <a href="register.html" class="btn btn-huge btn-block btn-embossed btn-danger"><h2>Register Now</h2></a>
+          <p>Want to be involved?!  Register here to join wiki-polls and start helping build crowdsourced data!</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+      <a name ="about"> </a>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">About Wiki-polls.<br /> <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">There are hundreds of national election polls taken leading up to a presidential election.  If we consider state-level polls, this number can creep up into the thousands. Instead of letting news outlets 'synthesize' the data, why shouldn't we have a single, publicly accessible repository of all polls related to a particular race?  Wiki-polls fills this void, providing a one-stop internet address for all data political.</p>
+        </div>
+        <div class="col-md-5">
+           <img class="featurette-image img-responsive img-circle" src="{{STATIC_URL}}/img/ballot_box.jpg" alt="Trial1"> 
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <a name ="polling"> </a>
+      <div class="row featurette">
+        <div class="col-md-5">
+           <img class="featurette-image img-responsive img-circle" src="{{STATIC_URL}}/img/crowdsourcing.png" alt="Trial1"> 
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Crowdsourced Polling. <span class="text-muted">Anything you can do, <strong> we </strong> can do better.</span></h2>
+          <p class="lead">News outlets hire individuals to aggregate the polling data of major market research companies, synthesizing the raw numbers into digestible snippets.  Rarely is the individual able to access these disparate sources of information themselves.  We can't all spend our time aggregating data!  Crowdsourced data generation is a solution to this problem.  It allows active, engaged participation by relying on multiple people for minimal work.  The result is a database which competes with privately sourced competition in scope and detail, while being open to all who care to delve into the data.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <a name ="analytics"> </a>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Open Analytics <br /><span class="text-muted">Statistics and Math done out in the open for once.</span></h2>
+          <p class="lead">Even when the data is available, the results of 'analytics' are published with minimal detail of how and why certain quantitative choices were made.  Wiki-polls provides a basic framework for analyzing polling data, giving basic plots and statistical analysis of likely outcomes.  We also crowdsource the analytics, allowing users to submit their own work (with proper documentation).  The other users are then able to vote on the various analyses, ask questions and give constructive feedback.  Wiki-polls then synthesizes these votes into a crowdsourced analytics page, presenting the most talked about analyses and reports.</p>
+        </div>
+        <div class="col-md-5">
+           <img class="featurette-image img-responsive img-circle" src="{{STATIC_URL}}/img/stats.jpg" alt="Trial1"> 
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}/js/bootstrap.min.js"></script>
+  </body>
+</html>

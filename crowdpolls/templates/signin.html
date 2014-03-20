@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+      <title>Signin to Wiki-Polls</title>
+
+            <!-- Bootstrap core CSS -->
+      <link href="{{STATIC_URL}}/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="signin.css" rel="stylesheet">
+
+      <style type="text/css">
+        /* Override some defaults */
+        html, body {
+          background-color: #eee;
+        }
+      </style>
+      {% endblock %}
+  </head>
+
+  <body>
+    {% block content %}
+      <div class="container">
+      {% block innercontent %}
+      {% endblock innercontent %}
+      </div><!-- /.container -->
+    {% endblock %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block extrascripts %}
+    {% endblock %}
+  </body>
+</html>
+

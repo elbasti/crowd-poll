@@ -10,5 +10,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', 'pollresults.views.index'),
     url(r'success', TemplateView.as_view(template_name='pollresults/success.html')), 
+    url(r'^register/$', 'pollresults.views.register'),
+    url(r'^login/$', 'pollresults.views.user_login'),
+    url(r'^logout/$', 'pollresults.views.user_logout'),    
     url(r'^admin/', include(admin.site.urls)),
 )

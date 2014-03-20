@@ -40,3 +40,28 @@ class IndexTestPostCase(TestCase):
         response= self.client.post('/', self.invalid_params)
         self.assertEqual(response.status_code,200)
 
+class LoginTestGetCase(TestCase):
+    
+    def setUp(self):
+        self.response = self.client.get('/login')
+    
+    def test_index_should_return_200(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_index_should_use_home_template(self):
+        self.assertTemplateUsed(self.response, 'pollresults/login.html')
+
+#    def test_should_have_login_form(self):
+#        self.assertEqual(type(self.response.context['form']),LoginForm)
+#        self.assertContains(self.response, '<form')
+
+
+# class LoginTestPostCase(TestCase):
+
+#     def setUp(self):
+#         self.valid_params = {'email':'glover@badass.com',
+#                              'password': 'password'}
+
+#     def test_valid_login_redirect(self):
+#         response = self.client.post('/login', self.valid_params, follow=True)
+#         self.assertRedirects(response,'success')
