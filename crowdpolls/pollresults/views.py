@@ -21,8 +21,12 @@ def index(request):
     return render(request,'pollresults/home.html', {'form':form})
 
 def register(request):
-    # A boolean value for telling the template whether the registration was successful.
-    # Set to False initially. Code changes value to True when registration succeeds.
+    # A boolean value for telling the template whether the registration 
+    # was successful.
+    # Set to False initially. Code changes value to True when registration
+    # succeeds.
+
+    #TODO What is this line doing? 
     registered = False
 
     # If it's a HTTP POST, we're interested in processing form data.
