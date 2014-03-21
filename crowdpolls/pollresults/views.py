@@ -25,8 +25,6 @@ def register(request):
     # was successful.
     # Set to False initially. Code changes value to True when registration
     # succeeds.
-
-    #TODO What is this line doing? 
     registered = False
 
     # If it's a HTTP POST, we're interested in processing form data.

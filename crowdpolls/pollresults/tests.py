@@ -82,7 +82,6 @@ class LogoutTestCase(TestCase):
     def test_a_logged_out_user_does_something_predictable(self):
         # remember you need to test every line of code
         # one of your lines is the @login_required decorator
-        # write a test making sure that the right thing happens when this is true
-        # write another test making sure the right thing happens if false!
+        # write a test making sure the right thing happens if false!
         # right now, if I go to /log_out and I'm not logged in I get an error
         pass
