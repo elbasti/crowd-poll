@@ -21,9 +21,6 @@ def index(request):
     return render(request,'pollresults/home.html', {'form':form})
 
 def register(request):
-    # Like before, get the request's context.
-    context = RequestContext(request)
-
     # A boolean value for telling the template whether the registration was successful.
     # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
@@ -59,10 +56,10 @@ def register(request):
         user_form = UserForm()
 
     # Render the template depending on the context.
-    return render_to_response(
+    return render(
+            request,
             'pollresults/register.html',
-            {'user_form': user_form, 'registered': registered},
-            context)
+            {'user_form': user_form, 'registered': registered})
 
 def user_login(request):
     # Like before, obtain the context for the user's request.
