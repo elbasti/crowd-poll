@@ -14,10 +14,6 @@ class IndexTestGetCase(TestCase):
     def test_index_should_use_home_template(self):
         self.assertTemplateUsed(self.response, 'pollresults/home.html')
 
-    def test_should_have_lead_form(self):
-        self.assertEqual(type(self.response.context['form']),LeadForm)
-        self.assertContains(self.response, '<form')
-
 class IndexTestPostCase(TestCase):
     
     def setUp(self):
@@ -40,21 +36,8 @@ class IndexTestPostCase(TestCase):
         response= self.client.post('/', self.invalid_params)
         self.assertEqual(response.status_code,200)
 
-class LoginTestGetCase(TestCase):
+#class LoginTestGetCase(TestCase):
     
-    def setUp(self):
-        self.response = self.client.get('/login')
-    
-    def test_index_should_return_200(self):
-        self.assertEqual(self.response.status_code, 200)
-
-    def test_index_should_use_home_template(self):
-        self.assertTemplateUsed(self.response, 'pollresults/login.html')
-
-#    def test_should_have_login_form(self):
-#        self.assertEqual(type(self.response.context['form']),LoginForm)
-#        self.assertContains(self.response, '<form')
-
 
 # class LoginTestPostCase(TestCase):
 
